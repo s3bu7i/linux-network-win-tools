@@ -13,18 +13,20 @@ Welcome to Port Scan )
 """
 )
 
+TARGET_IP_PROMPT = "Enter The Target Ip : "
+
 ordernum =input("What level should the scan be ? ")
 
 if(ordernum == "1"):
-  targetip = input("Enter The Target Ip : ")
+  targetip = input(TARGET_IP_PROMPT)
   os.system("nmap " + targetip)
   
 elif(ordernum == "2"):
-  targetip = input("Enter The Target Ip : ")
+  targetip = input(TARGET_IP_PROMPT)
   os.system("nmap -sS -sV " + targetip)
   
 elif(ordernum == "3"):
-  targetip = input("Enter The Target Ip : ")
+  targetip = input(TARGET_IP_PROMPT)
   os.system("nmap -o " + targetip)
   
 else:

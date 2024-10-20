@@ -10,7 +10,7 @@ def allow_ip_address(ipaddress):
     return False
 
 def always_allow_ip_address(ipaddress):
-    for i in exempt_ips:
+    for ip in exempt_ips:
         if ip_address(ipaddress) in ip_network(ip):
             return True
         return False

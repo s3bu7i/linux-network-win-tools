@@ -1,12 +1,12 @@
 import sys
 import timeit
-from tkinter import *
+from tkinter import Tk, ttk
 from tkinter import ttk
 
 
-from startswith import allow_ip_address as allow_ip_address_startswith
-from net import allow_ip_address as allow_ip_address_net
-from netlist import allow_ip_address as allow_ip_address_netlist
+from Network.tests.startswith import allow_ip_address as allow_ip_address_startswith
+from Network.tests.net import allow_ip_address as allow_ip_address_net
+from Network.tests.netlist import allow_ip_address as allow_ip_address_netlist
 
 ipaddress = sys.argv[1]
 

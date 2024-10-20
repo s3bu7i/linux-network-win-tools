@@ -4,7 +4,7 @@ exemp_ips = ["127.0.0.1","10.0.0.0/16"]
 fake_db_allowed_ips = ["42.42.42.42","1.2.3.4"]
 
 def allow_ip_address(ipaddress):
-    if allow_ip_address(ipaddress) or ipaddress in fake_db_allowed_ips:
+    if always_allow_ip_address(ipaddress) or ipaddress in fake_db_allowed_ips:
         return True
     return False
 
