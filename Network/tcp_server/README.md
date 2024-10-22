@@ -6,7 +6,7 @@
 
 [prompt-synch](https://www.npmjs.com/package/prompt-sync)
 
-![cli image](https://i.imgur.com/xCmZrAe.png)
+![cli image](https://github.com/s3bu7i/linux-and-network-tools/blob/main/Network/tcp_server/162857.png)
 
 
 ### How to use:
