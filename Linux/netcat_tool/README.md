@@ -96,6 +96,3 @@ python netcat.py --mode shell --target 192.168.1.10 --port 4444
 
 This tool allows for remote shell access and file transfers, which could be misused if used improperly. Only use this tool in controlled environments where you have permission to do so.
 
-## License
-
-This project is licensed under the MIT License.
