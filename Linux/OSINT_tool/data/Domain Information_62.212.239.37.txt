@@ -1,0 +1,23 @@
+Type: Domain Information
+Query: 62.212.239.37
+Result:
+{
+  "domain_name": null,
+  "registrar": null,
+  "whois_server": null,
+  "referral_url": null,
+  "updated_date": null,
+  "creation_date": null,
+  "expiration_date": null,
+  "name_servers": null,
+  "status": null,
+  "emails": null,
+  "dnssec": null,
+  "name": null,
+  "org": null,
+  "address": null,
+  "city": null,
+  "state": null,
+  "registrant_postal_code": null,
+  "country": null
+}
