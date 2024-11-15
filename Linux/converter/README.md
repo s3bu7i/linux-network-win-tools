@@ -36,7 +36,7 @@ pip install tqdm
 Run the script with the required arguments as follows:
 
 ```bash
-python3 advanced_dump.py FILE [OPTIONS]
+python3 dump.py FILE [OPTIONS]
 ```
 
 ### **Arguments**
@@ -54,22 +54,22 @@ python3 advanced_dump.py FILE [OPTIONS]
 
 ### 1. **Dump File in Hexadecimal Format** (default):
 ```bash
-python3 advanced_dump.py example.bin
+python3 dump.py example.bin
 ```
 
 ### 2. **Dump File in Binary and Octal Formats**:
 ```bash
-python3 advanced_dump.py example.bin -f binary octal
+python3 dump.py example.bin -f binary octal
 ```
 
 ### 3. **Analyze File Content**:
 ```bash
-python3 advanced_dump.py example.bin -a
+python3 dump.py example.bin -a
 ```
 
 ### 4. **Dump File in All Formats and Analyze**:
 ```bash
-python3 advanced_dump.py example.bin -f hex binary octal decimal -a
+python3 dump.py example.bin -f hex binary octal decimal -a
 ```
 
 ---
