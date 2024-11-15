@@ -1,0 +1,4 @@
+[2024-11-16 00:39:17] FILE: example.bin, FORMATS: ['hex'], ANALYZE: True
+[2024-11-16 00:40:59] FILE: example.bin, FORMATS: ['hex'], ANALYZE: False
+[2024-11-16 00:41:32] FILE: example.bin, FORMATS: ['hex', 'binary'], ANALYZE: False
+[2024-11-16 00:41:54] FILE: example.bin, FORMATS: ['hex'], ANALYZE: True
