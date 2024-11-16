@@ -1,0 +1,10 @@
+api.hackthissite.org
+forum.hackthissite.org
+forums.hackthissite.org
+git.hackthissite.org
+irc.hackthissite.org
+mail.hackthissite.org
+mirror.hackthissite.org
+staff.hackthissite.org
+stats.hackthissite.org
+www.hackthissite.org
