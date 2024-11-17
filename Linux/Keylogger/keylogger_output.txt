@@ -1,0 +1,17 @@
+Keystroke: 's'
+Keystroke: 'a'
+Keystroke: 's'
+Keystroke: 'a'
+Keystroke: 's'
+Keystroke: 'a'
+Keystroke: 's'
+Keystroke: 'a'
+Keystroke: Key.ctrl_l
+Keystroke: '\x03'
+Keystroke: Key.ctrl_l
+Keystroke: '\x03'
+Keystroke: Key.ctrl_l
+Keystroke: Key.ctrl_l
+Keystroke: Key.ctrl_l
+Keystroke: Key.ctrl_l
+Keystroke: '\x03'

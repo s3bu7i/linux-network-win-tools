@@ -1,0 +1,20 @@
+2024-11-17 18:20:20,899 - ERROR - Error in on_key_press: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+2024-11-17 18:20:44,849 - ERROR - Error in on_key_press: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+2024-11-17 18:21:33,059 - ERROR - Error in on_key_press: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+2024-11-17 18:49:51,837 - ERROR - Failed to fetch clipboard data: Expected 5 fields in line 18, saw 7. Error could possibly be due to quotes being ignored when a multi-char delimiter is used.
+2024-11-17 18:49:52,071 - ERROR - Failed to fetch clipboard data: Expected 5 fields in line 18, saw 7. Error could possibly be due to quotes being ignored when a multi-char delimiter is used.
+2024-11-17 18:49:52,244 - ERROR - Failed to fetch clipboard data: Expected 5 fields in line 18, saw 7. Error could possibly be due to quotes being ignored when a multi-char delimiter is used.
+2024-11-17 18:49:52,357 - ERROR - Failed to fetch clipboard data: Expected 5 fields in line 18, saw 7. Error could possibly be due to quotes being ignored when a multi-char delimiter is used.
+2024-11-17 18:49:52,469 - ERROR - Failed to fetch clipboard data: Expected 5 fields in line 18, saw 7. Error could possibly be due to quotes being ignored when a multi-char delimiter is used.
+2024-11-17 18:49:52,632 - ERROR - Failed to fetch clipboard data: Expected 5 fields in line 18, saw 7. Error could possibly be due to quotes being ignored when a multi-char delimiter is used.
+2024-11-17 18:49:52,942 - ERROR - Failed to fetch clipboard data: Expected 5 fields in line 18, saw 7. Error could possibly be due to quotes being ignored when a multi-char delimiter is used.
+2024-11-17 18:49:53,133 - ERROR - Failed to fetch clipboard data: Expected 5 fields in line 18, saw 7. Error could possibly be due to quotes being ignored when a multi-char delimiter is used.
+2024-11-17 18:49:56,093 - ERROR - Failed to fetch clipboard data: Expected 5 fields in line 18, saw 7. Error could possibly be due to quotes being ignored when a multi-char delimiter is used.
+2024-11-17 18:49:56,310 - ERROR - Failed to fetch clipboard data: Expected 5 fields in line 18, saw 7. Error could possibly be due to quotes being ignored when a multi-char delimiter is used.
+2024-11-17 18:49:57,583 - ERROR - Failed to fetch clipboard data: Expected 5 fields in line 18, saw 7. Error could possibly be due to quotes being ignored when a multi-char delimiter is used.
+2024-11-17 18:49:57,858 - ERROR - Failed to fetch clipboard data: Expected 5 fields in line 18, saw 7. Error could possibly be due to quotes being ignored when a multi-char delimiter is used.
+2024-11-17 18:49:59,530 - ERROR - Failed to fetch clipboard data: Expected 5 fields in line 18, saw 7. Error could possibly be due to quotes being ignored when a multi-char delimiter is used.
+2024-11-17 18:50:00,048 - ERROR - Failed to fetch clipboard data: Expected 5 fields in line 18, saw 7. Error could possibly be due to quotes being ignored when a multi-char delimiter is used.
+2024-11-17 18:50:00,081 - ERROR - Failed to fetch clipboard data: Expected 5 fields in line 18, saw 7. Error could possibly be due to quotes being ignored when a multi-char delimiter is used.
+2024-11-17 18:50:00,116 - ERROR - Failed to fetch clipboard data: Expected 5 fields in line 18, saw 7. Error could possibly be due to quotes being ignored when a multi-char delimiter is used.
+2024-11-17 18:50:00,130 - ERROR - Failed to fetch clipboard data: Expected 5 fields in line 18, saw 7. Error could possibly be due to quotes being ignored when a multi-char delimiter is used.
