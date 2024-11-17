@@ -26,7 +26,7 @@ pip install psutil
 Run the script from the terminal with the following command:
 
 ```bash
-python fetch_process_details.py --output <output_file.json>
+python process_monitor.py --output <output_file.json>
 ```
 
 Where:
@@ -35,7 +35,7 @@ Where:
 ### Example:
 
 ```bash
-python fetch_process_details.py --output my_processes.json
+python process_monitor.py --output my_processes.json
 ```
 
 This will fetch the process details and save them to `my_processes.json`.
@@ -75,7 +75,6 @@ The JSON file will contain an array of process details, where each entry include
         "open_files": ["file1.txt", "file2.txt"],
         "cpu_times": {"user": 2.4, "system": 1.2}
     },
-    ...
 ]
 ```
 
