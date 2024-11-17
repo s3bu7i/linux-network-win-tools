@@ -33,8 +33,8 @@ This project provides an **Advanced WiFi Monitoring Tool** for detecting nearby 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo/wifi-monitoring-tool.git
-   cd wifi-monitoring-tool
+   git clone https://github.com/s3bu7i/linux-and-network-tools/tree/main/Linux
+   cd Wifi-monitoring
    ```
 
 2. Install the required Python libraries:
