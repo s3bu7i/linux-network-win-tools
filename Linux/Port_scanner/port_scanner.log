@@ -1,0 +1,5 @@
+2024-11-18 15:28:18,521 - INFO - Port 80: OPEN (HTTP) - Banner: HTTP/1.1 301 Moved Permanently
+Content-length: 0
+Location: https:///
+Connection: close
+2024-11-18 15:28:20,512 - INFO - Port 443: OPEN (HTTPS) - Banner: 
