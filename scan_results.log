@@ -1,0 +1,18 @@
+Started Multi-Tool Web Vulnerability Scanner
+[+] Starting Port Scan
+[+] Starting Directory Brute-Force
+[+] Checking HTTP Headers
+[+] Checking for SQL Injection vulnerabilities
+[!] X-Content-Type-Options Header Missing
+[+] Found Directory: https://www.hackthissite.org//account
+[!] Scanner Interrupted by User
+Started Multi-Tool Web Vulnerability Scanner
+Started Multi-Tool Web Vulnerability Scanner
+[+] Starting Port Scan
+[+] Starting Directory Brute-Force
+[+] Checking HTTP Headers
+[+] Checking for SQL Injection vulnerabilities
+[!] X-XSS-Protection Header Missing
+[!] Content-Security-Policy Header Missing
+[!] X-Content-Type-Options Header Missing
+[!] Scanner Interrupted by User
