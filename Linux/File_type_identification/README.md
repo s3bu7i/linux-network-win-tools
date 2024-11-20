@@ -14,8 +14,8 @@ This is a Python-based CLI application for identifying file types using the `lib
 
 1. Clone the repository:
    ```bash
-   git clone https: // github.com/your-repository/file-type-identification
-   cd file-type-identification
+   git clone https://github.com/s3bu7i/linux-and-network-tools/edit/main/Linux/File_type_identification
+   cd File-type-identification
    ```
 
 2. Create and activate a virtual environment:
@@ -41,14 +41,6 @@ This is a Python-based CLI application for identifying file types using the `lib
    - Analyze a single file.
    - Analyze all files in a directory.
    - Save results to a file (optional).
-
-## Example
-
-### Single File Analysis
-![Single File Analysis](https://via.placeholder.com/800x400?text=Single+File+Analysis+Screenshot)
-
-### Batch Directory Analysis
-![Batch Analysis](https://via.placeholder.com/800x400?text=Batch+Directory+Analysis+Screenshot)
 
 ## Dependencies
 
