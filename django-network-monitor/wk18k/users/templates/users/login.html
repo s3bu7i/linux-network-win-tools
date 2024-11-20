@@ -1,0 +1,36 @@
+{% extends 'network_monitor/layout.html' %}
+{% block title %}Login{% endblock title %}
+{% block content %}
+<div class="flex flex-col justify-center my-20  overflow-hidden">
+    <div class="w-full p-6 m-auto bg-neutral rounded-md shadow-md lg:max-w-lg ">
+        <h1 class="text-3xl font-semibold text-center text-primary-content">เข้าสู่ระบบ</h1>
+        <form class="space-y-4" action="{% url 'users:login' %}" method="POST">
+            {% csrf_token %}
+            <div>
+                <label class="label">
+                    <span class="text-base label-text">{{form_user.username.label}}</span>
+                </label>
+                {{form_user.username}}
+                {% if username_error %}
+                <label class="label">
+                    <span class="label-text-alt my-1 text-error">{{username_error}}</span>
+                </label>
+                {% endif %}
+            <div>
+                <label class="label">
+                    <span class="text-base label-text">รหัสผ่าน</span>
+                </label>
+                {{form_user.password}}
+                {% if password_error %}
+                <label class="label">
+                    <span class="label-text-alt my-1 text-error">{{password_error}}</span>
+                </label>
+                {% endif %}
+            </div>
+                <br>
+            <button class="btn btn-primary w-full">เข้าสู่ระบบ</button>
+        </form>
+    </div>
+</div>
+
+{% endblock  %}

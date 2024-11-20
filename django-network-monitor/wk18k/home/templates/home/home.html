@@ -1,0 +1,38 @@
+{% extends 'network_monitor/layout.html' %}
+
+{% block title %}Home{% endblock title %}
+
+
+{% block content %}
+<ul class="menu bg-base-200 rounded-box h-full flex flex-col items-center">
+    <li class="w-full">
+      <a class="flex justify-between" href="{% url 'network_monitor:index' %}">
+        <p class="text-2xl text-center ">Network Monitor</p>
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-antenna-bars-5" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M6 18l0 -3"></path>
+            <path d="M10 18l0 -6"></path>
+            <path d="M14 18l0 -9"></path>
+            <path d="M18 18l0 -12"></path>
+         </svg>
+      </a>
+    </li >
+    <li class="w-full">
+        <a class="flex justify-between" href="{% url 'admin:index' %}">
+          <p class="text-2xl text-center ">Admin Panel</p>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-adjustments-alt" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M4 8h4v4h-4z"></path>
+              <path d="M6 4l0 4"></path>
+              <path d="M6 12l0 8"></path>
+              <path d="M10 14h4v4h-4z"></path>
+              <path d="M12 4l0 10"></path>
+              <path d="M12 18l0 2"></path>
+              <path d="M16 5h4v4h-4z"></path>
+              <path d="M18 4l0 1"></path>
+              <path d="M18 9l0 11"></path>
+           </svg>
+        </a>
+      </li >
+  </ul>
+{% endblock  %}

@@ -1,0 +1,270 @@
+{% extends 'network_monitor/layout.html' %}
+{% block title %}Network Monitor{% endblock title %}
+{% block content %}
+  
+
+
+
+<style>
+    .check-data {
+        {% if network_monitor.count %}{% else %}display:none{% endif %}
+    }
+</style>
+<div class="flex flex-col gap-10 justify-between">
+  <h1 class="text-2xl text-center">Network Monitor {% if request.user.is_authenticated %}| {{ request.user.username }} {% endif %}</h1>
+  
+  <div>
+    <table class="table {% if request.user.is_authenticated %}table-xs{% endif %} md:table-md xl:table-lg check-data" id="networkTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>URL</th>
+          <th>Status</th>
+          <th>Latency</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in network_monitor %}
+        <tr id="row-{{ i.id }}">
+          <th>{{ i.id }}</th>
+          <td>{{ i.name }}</td>
+          <td>{{ i.url }}</td>
+          <td id="status-{{ i.id }}" class="{% if i.status == '200' %}text-green-500{% else %}text-red-500{% endif %}">{{ i.status }}</td>
+          <td id="latency-{{ i.id }}" class="{% if i.latency == '9999 ms' %} text-red-500{% endif %}">{{ i.latency }}</td>
+          {% if request.user.is_authenticated %}
+          <td>
+            <div class="dropdown dropdown-hover">
+              <label tabindex="0" class="btn m-1 btn-xs"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="icon icon-tabler icon-tabler-settings"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z"
+                  ></path>
+                  <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path></svg
+              ></label>
+
+              <ul
+                tabindex="0"
+                class="dropdown-content z-[1] menu shadow bg-white rounded-box w-22"
+              >
+                <li onclick="updateForm.showModal();sendID({{i.id}})" >
+                  <a class="hover:text-blue-500"
+                    ><button>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-pencil"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        stroke-width="2"
+                        stroke="currentColor"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path
+                          stroke="none"
+                          d="M0 0h24v24H0z"
+                          fill="none"
+                        ></path>
+                        <path
+                          d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4"
+                        ></path>
+                        <path d="M13.5 6.5l4 4"></path>
+                      </svg></button
+                  ></a>
+                </li>
+                <li onclick="remove_data_js({{i.id}})">
+                  <a class="hover:text-red-500"
+                    ><button>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-square-rounded-x-filled"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        stroke-width="2"
+                        stroke="currentColor"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path
+                          stroke="none"
+                          d="M0 0h24v24H0z"
+                          fill="none"
+                        ></path>
+                        <path
+                          d="M12 2l.324 .001l.318 .004l.616 .017l.299 .013l.579 .034l.553 .046c4.785 .464 6.732 2.411 7.196 7.196l.046 .553l.034 .579c.005 .098 .01 .198 .013 .299l.017 .616l.005 .642l-.005 .642l-.017 .616l-.013 .299l-.034 .579l-.046 .553c-.464 4.785 -2.411 6.732 -7.196 7.196l-.553 .046l-.579 .034c-.098 .005 -.198 .01 -.299 .013l-.616 .017l-.642 .005l-.642 -.005l-.616 -.017l-.299 -.013l-.579 -.034l-.553 -.046c-4.785 -.464 -6.732 -2.411 -7.196 -7.196l-.046 -.553l-.034 -.579a28.058 28.058 0 0 1 -.013 -.299l-.017 -.616c-.003 -.21 -.005 -.424 -.005 -.642l.001 -.324l.004 -.318l.017 -.616l.013 -.299l.034 -.579l.046 -.553c.464 -4.785 2.411 -6.732 7.196 -7.196l.553 -.046l.579 -.034c.098 -.005 .198 -.01 .299 -.013l.616 -.017c.21 -.003 .424 -.005 .642 -.005zm-1.489 7.14a1 1 0 0 0 -1.218 1.567l1.292 1.293l-1.292 1.293l-.083 .094a1 1 0 0 0 1.497 1.32l1.293 -1.292l1.293 1.292l.094 .083a1 1 0 0 0 1.32 -1.497l-1.292 -1.293l1.292 -1.293l.083 -.094a1 1 0 0 0 -1.497 -1.32l-1.293 1.292l-1.293 -1.292l-.094 -.083z"
+                          fill="currentColor"
+                          stroke-width="0"
+                        ></path>
+                      </svg></button
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </td>
+          {% endif %}
+        </tr>
+        {% endfor %}
+      </tbody> 
+    </table>
+    {% if request.user.is_authenticated %}
+    <div class="divider">
+      <button class="btn btn-primary" onclick="addForm.showModal()">
+        เพิ่มข้อมูล
+      </button> 
+    </div>
+    {% endif %}
+  </div>
+
+</div>
+<dialog id="addForm" class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box">
+    <h3 class="font-bold text-lg">เพิ่มข้อมูล</h3>
+    <div class="modal-action flex justify-center">
+        <form action="{% url 'network_monitor:add_data' %}" method="post">
+        {% csrf_token %}
+          <div class="flex flex-col gap-2">
+            <label class="input-group">
+              <span>{{form.name.label}}</span>
+              {{form.name}}
+            </label>
+            <label class="input-group">
+              <span>{{form.url.label}}</span>
+              {{form.url}}
+            </label>
+            <label class="input-group">
+              <span>{{form.status.label}}</span>
+              {{form.status}}
+            </label>
+            <div class="flex gap-2 justify-end">
+              <input type="submit" class="btn btn-primary" value="บันทึก" />
+              <button onclick="addForm.close()" type="button"
+                class="btn border-error text-error hover:text-white hover:bg-error"
+              >
+                ปิด
+              </button>
+            </div>
+          </div>
+      </form>
+    </div>
+  </div>
+</dialog>
+<dialog id="updateForm" class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box">
+    <h3 class="font-bold text-lg">อัพเดทข้อมูล</h3>
+    <div class="modal-action flex justify-center">
+        <form id="formUpdate" method="post">
+        {% csrf_token %}
+          <div class="flex flex-col gap-2">
+            <label class="input-group">
+              <span>{{form_update.name_update.label}}</span>
+              {{form_update.name_update}}
+            </label>
+            <label class="input-group">
+              <span>{{form_update.url_update.label}}</span>
+              {{form_update.url_update}}
+            </label>
+            <label class="input-group">
+              <span>{{form_update.status_update.label}}</span>
+              {{form_update.status_update}}
+            </label>
+            <div class="flex gap-2 justify-end">
+              <input type="submit" class="btn btn-primary" value="บันทึก" />
+              <button onclick="updateForm.close()" type="button"
+                class="btn border-error text-error hover:text-white hover:bg-error"
+              >
+                ปิด
+              </button>
+            </div>
+          </div>
+      </form>
+    </div>
+  </div>
+</dialog>
+
+<script>
+  // Function to update individual table cells
+  const updateTableCells = (id, status, latency) => {
+    const statusCell = document.getElementById(`status-${id}`);
+    const latencyCell = document.getElementById(`latency-${id}`);
+    
+    statusCell.textContent = status;
+    statusCell.className = status === '200' ? 'text-green-500' : 'text-red-500';
+    
+    latencyCell.textContent = latency;
+    latencyNumber = latency.split(' ms')[0];
+    if( latencyNumber <= 1200 ){
+      latencyCell.className = 'text-green-500'
+    }
+    else if(status === '502' || status === '404' || status === '500'){
+      latencyCell.className = 'text-red-500'
+    }
+    else {
+      latencyCell.className = 'text-yellow-500'
+    }
+  };
+
+  // Function to fetch and update the table data
+  const updateTableData = () => {
+    fetch("{% url 'network_monitor:table_data' %}")
+      .then(response => response.json())
+      .then(data => {
+        data.forEach(entry => {
+          updateTableCells(entry.id, entry.status, entry.latency);
+        });
+      });
+  };
+
+  // Initial table data update
+  updateTableData();
+
+  // Refresh table data every 1 minute
+  setInterval(updateTableData, 1000);
+
+  const remove_data_js = (id) => {
+    let url = "{% url 'network_monitor:remove_data' id=0 %}".replace("0", id);
+    window.location.replace(url);
+  };
+
+  const sendID = (id) => {
+    const form = document.querySelector("#formUpdate");
+    const actionUrl = "{% url 'network_monitor:update_data' id=0 %}".replace("0", id);
+    const nameInput = document.querySelector('input[name="name_update"]');
+    const urlInput = document.querySelector('input[name="url_update"]');
+    const statusInput = document.querySelector('input[name="status_update"]');
+    form.setAttribute("action", actionUrl);
+    let url = "{% url 'network_monitor:update_data' id=0 %}".replace("0", id);
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        // Use the JSON data
+        nameInput.value = data.name;
+        urlInput.value = data.url;
+        statusInput.value = data.status;
+        // Process the data further
+        // ...
+      })
+      .catch((error) => {
+        // Handle any errors that occurred during the fetch
+        console.error("Error:", error);
+      });
+  };
+  
+</script>
+
+{% endblock content %}

@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+{% load static %}
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.7.3/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap" rel="stylesheet">
+    <title>{% block title %}{% endblock title %}</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body {
+            font-family: 'Kanit', sans-serif;
+        }
+    </style>
+</head>
+{% url 'users:login' as login_url %}
+{% url 'home:index' as home_url %}
+<body>
+    <div class="navbar bg-base-100">
+        <div class="flex-1">
+            {% if request.path == home_url %}
+            <a class="btn btn-ghost normal-case text-xl" href="{% url 'home:index' %}">wk18k</a>
+            {% else %}
+            <a class="btn btn-ghost normal-case text-xl" href="{% url 'network_monitor:index' %}">Network Monitor | wk18k</a>
+            {% endif %}
+        </div>
+        <div class="flex-none">
+            <ul class="menu menu-horizontal px-1">
+
+                {% if not request.user.is_authenticated and request.path != login_url and request.path != home_url  %}
+                <li><a href="{% url 'users:login' %}">เข้าสู่ระบบ</a></li>
+                {% elif request.user.is_authenticated %}
+                <li><a href="{% url 'users:logout' %}">ออกจากระบบ</a></li>
+                {% endif %}
+                
+            </ul>
+        </div>
+    </div>
+    <div class="container mx-auto p-5  py-5">
+        <script src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        {% block content %}{% endblock content %}
+    </div>
+    <style>
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+    </style>
+    <footer class="footer footer-center p-4 bg-base-300 text-base-content">
+        <aside>
+            <p>Copyright © 2023 - <script>document.write(new Date().getFullYear())</script> All right reserved by <a class="link" href="https://github.com/watchakorn-18k/django-network-monitor"
+                    target="_blank" rel="noopener noreferrer">https://github.com/watchakorn-18k/django-network-monitor/</a></p>
+        </aside>
+    </footer>
+</body>
+
+</html>
