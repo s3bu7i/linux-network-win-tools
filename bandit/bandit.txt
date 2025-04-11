@@ -1,0 +1,353 @@
+terminal connect command
+ssh bandit0@bandit.labs.overthewire.org -p 2220
+
+
+bandit 1 - ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
+
+bandit 2 - 263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+	bandit1@bandit:~$ ls -a
+	-  .  ..  .bash_logout  .bashrc  .profile
+	bandit1@bandit:~$ cat ./-
+	263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+
+bandit 3 - MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx
+	bandit2@bandit:~$ ls
+	spaces in this filename
+	bandit2@bandit:~$ cat spaces\ in\ this\ filename
+	MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx
+
+bandit 4 - 2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
+	bandit3@bandit:~$ ls
+	inhere
+	bandit3@bandit:~$ cat inhere/
+	cat: inhere/: Is a directory
+	bandit3@bandit:~$ cd inhere/
+	bandit3@bandit:~/inhere$ ls
+	bandit3@bandit:~/inhere$ ls -a
+	.  ..  ...Hiding-From-You
+	bandit3@bandit:~/inhere$ cat ...Hiding-From-You
+	2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
+	bandit3@bandit:~/inhere$
+
+bandit 5 - 4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
+	bandit4@bandit:~/inhere$ file ./*
+	./-file00: data
+	./-file01: data
+	./-file02: data
+	./-file03: data
+	./-file04: data
+	./-file05: data
+	./-file06: data
+	./-file07: ASCII text
+	./-file08: data
+	./-file09: data
+	bandit4@bandit:~/inhere$ cat ./-file07
+	4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
+
+bandit 6 - HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
+	bandit5@bandit:~$ ls
+	inhere
+	bandit5@bandit:~$ cd inhere/
+	bandit5@bandit:~/inhere$ ls
+	maybehere00  maybehere03  maybehere06  maybehere09  maybehere12  maybehere15  maybehere18
+	maybehere01  maybehere04  maybehere07  maybehere10  maybehere13  maybehere16  maybehere19
+	maybehere02  maybehere05  maybehere08  maybehere11  maybehere14  maybehere17
+	bandit5@bandit:~/inhere$ ls -la
+	total 88
+	drwxr-x--- 22 root bandit5 4096 Sep 19  2024 .
+	drwxr-xr-x  3 root root    4096 Sep 19  2024 ..
+	drwxr-x---  2 root bandit5 4096 Sep 19  2024 maybehere00
+	drwxr-x---  2 root bandit5 4096 Sep 19  2024 maybehere01
+	drwxr-x---  2 root bandit5 4096 Sep 19  2024 maybehere02
+	drwxr-x---  2 root bandit5 4096 Sep 19  2024 maybehere03
+	drwxr-x---  2 root bandit5 4096 Sep 19  2024 maybehere04
+	drwxr-x---  2 root bandit5 4096 Sep 19  2024 maybehere05
+	drwxr-x---  2 root bandit5 4096 Sep 19  2024 maybehere06
+	drwxr-x---  2 root bandit5 4096 Sep 19  2024 maybehere07
+	drwxr-x---  2 root bandit5 4096 Sep 19  2024 maybehere08
+	drwxr-x---  2 root bandit5 4096 Sep 19  2024 maybehere09
+	drwxr-x---  2 root bandit5 4096 Sep 19  2024 maybehere10
+	drwxr-x---  2 root bandit5 4096 Sep 19  2024 maybehere11
+	drwxr-x---  2 root bandit5 4096 Sep 19  2024 maybehere12
+	drwxr-x---  2 root bandit5 4096 Sep 19  2024 maybehere13
+	drwxr-x---  2 root bandit5 4096 Sep 19  2024 maybehere14
+	drwxr-x---  2 root bandit5 4096 Sep 19  2024 maybehere15
+	drwxr-x---  2 root bandit5 4096 Sep 19  2024 maybehere16
+	drwxr-x---  2 root bandit5 4096 Sep 19  2024 maybehere17
+	drwxr-x---  2 root bandit5 4096 Sep 19  2024 maybehere18
+	drwxr-x---  2 root bandit5 4096 Sep 19  2024 maybehere19
+	bandit5@bandit:~/inhere$ find . -type f -size 1033c ! -executable
+	./maybehere07/.file2
+	bandit5@bandit:~/inhere$ cat ./maybehere07/.file2
+	HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
+
+bandit 7 - morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
+	bandit6@bandit:~$ ls
+	bandit6@bandit:~$ ls -la
+	total 20
+	drwxr-xr-x  2 root root 4096 Sep 19  2024 .
+	drwxr-xr-x 70 root root 4096 Sep 19  2024 ..
+	-rw-r--r--  1 root root  220 Mar 31  2024 .bash_logout
+	-rw-r--r--  1 root root 3771 Mar 31  2024 .bashrc
+	-rw-r--r--  1 root root  807 Mar 31  2024 .profile
+	bandit6@bandit:~$ find / -type f -user bandit7 -group bandit6 -size 33c 2>/dev/null
+	/var/lib/dpkg/info/bandit7.password
+	bandit6@bandit:~$ cat /var/lib/dpkg/info/bandit7.password
+	morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
+
+bandit 8 - dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
+	bandit7@bandit:~$
+	bandit7@bandit:~$ ls
+	data.txt
+	bandit7@bandit:~$ cat data.txt | grep millionth
+	millionth       dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
+
+bandit 9 - 4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
+	bandit8@bandit:~$ ls -la
+	total 56
+	drwxr-xr-x  2 root    root     4096 Sep 19  2024 .
+	drwxr-xr-x 70 root    root     4096 Sep 19  2024 ..
+	-rw-r--r--  1 root    root      220 Mar 31  2024 .bash_logout
+	-rw-r--r--  1 root    root     3771 Mar 31  2024 .bashrc
+	-rw-r-----  1 bandit9 bandit8 33033 Sep 19  2024 data.txt
+	-rw-r--r--  1 root    root      807 Mar 31  2024 .profile
+	bandit8@bandit:~$ sort data.txt | uniq -u
+	4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
+	
+bandit 10 - FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
+
+	bandit9@bandit:~$ ls -la
+	total 40
+	drwxr-xr-x  2 root     root     4096 Sep 19  2024 .
+	drwxr-xr-x 70 root     root     4096 Sep 19  2024 ..
+	-rw-r--r--  1 root     root      220 Mar 31  2024 .bash_logout
+	-rw-r--r--  1 root     root     3771 Mar 31  2024 .bashrc
+	-rw-r-----  1 bandit10 bandit9 19379 Sep 19  2024 data.txt
+	-rw-r--r--  1 root     root      807 Mar 31  2024 .profile
+	bandit9@bandit:~$ strings data.txt | grep '==='
+	}========== the
+	3JprD========== passwordi
+	~fDV3========== is
+	D9========== FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
+
+bandit 11 - dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
+
+	bandit10@bandit:~$ ls
+	data.txt
+	bandit10@bandit:~$ ls -la
+	total 24
+	drwxr-xr-x  2 root     root     4096 Sep 19  2024 .
+	drwxr-xr-x 70 root     root     4096 Sep 19  2024 ..
+	-rw-r--r--  1 root     root      220 Mar 31  2024 .bash_logout
+	-rw-r--r--  1 root     root     3771 Mar 31  2024 .bashrc
+	-rw-r-----  1 bandit11 bandit10   69 Sep 19  2024 data.txt
+	-rw-r--r--  1 root     root      807 Mar 31  2024 .profile
+	bandit10@bandit:~$ file data.txt
+	data.txt: ASCII text
+	bandit10@bandit:~$ cat data.txt
+	VGhlIHBhc3N3b3JkIGlzIGR0UjE3M2ZaS2IwUlJzREZTR3NnMlJXbnBOVmozcVJyCg==
+	bandit10@bandit:~$ cat data.txt | base64 -d
+	The password is dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
+	bandit10@bandit:~$ base64 -d data.txt
+	The password is dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
+
+bandit 12 - 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
+
+	bandit11@bandit:~$ ls -la
+	total 24
+	drwxr-xr-x  2 root     root     4096 Sep 19  2024 .
+	drwxr-xr-x 70 root     root     4096 Sep 19  2024 ..
+	-rw-r--r--  1 root     root      220 Mar 31  2024 .bash_logout
+	-rw-r--r--  1 root     root     3771 Mar 31  2024 .bashrc
+	-rw-r-----  1 bandit12 bandit11   49 Sep 19  2024 data.txt
+	-rw-r--r--  1 root     root      807 Mar 31  2024 .profile
+	bandit11@bandit:~$ cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+	The password is 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
+
+bandit 13 - FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
+	
+	bandit12@bandit:~$ mkdir /tmp/test
+	mkdir: cannot create directory ‘/tmp/test’: File exists
+	bandit12@bandit:~$ mkdir /tmp/asdjsjad
+	bandit12@bandit:~$ cd /tmp/asdjsjad
+	bandit12@bandit:/tmp/asdjsjad$ ll
+	total 17012
+	drwxrwxr-x 2 bandit12 bandit12     4096 Apr  4 18:01 ./
+	drwxrwx-wt 1 root     root     17412096 Apr  4 18:21 ../
+	bandit12@bandit:/tmp/asdjsjad$ cd ~
+	bandit12@bandit:~$ cp data.txt /tmp/asdjsjad
+	bandit12@bandit:~$ cd /tmp/asdjsjad
+	bandit12@bandit:/tmp/asdjsjad$ xxd -r data.txt > data
+	bandit12@bandit:/tmp/asdjsjad$ ls
+	data  data.txt
+	bandit12@bandit:/tmp/asdjsjad$ file data
+	data: gzip compressed data, was "data2.bin", last modified: Thu Sep 19 07:08:15 2024, max 	compression, from Unix, original size modulo 2^32 574
+	bandit12@bandit:/tmp/asdjsjad$ mv data data.gz
+	bandit12@bandit:/tmp/asdjsjad$ gzip -d data.gz
+	bandit12@bandit:/tmp/asdjsjad$ ls
+	data  data.txt
+	bandit12@bandit:/tmp/asdjsjad$ file data
+	data: bzip2 compressed data, block size = 900k
+	bandit12@bandit:/tmp/asdjsjad$ mv data data.bz2
+	bandit12@bandit:/tmp/asdjsjad$ bzip2 -d data.bz2
+	bandit12@bandit:/tmp/asdjsjad$ file data
+	data: gzip compressed data, was "data4.bin", last modified: Thu Sep 19 07:08:15 2024, max 	compression, from Unix, original size modulo 2^32 	20480
+	bandit12@bandit:/tmp/asdjsjad$ mv data data.gz
+	bandit12@bandit:/tmp/asdjsjad$ gzip -d data.gz
+	bandit12@bandit:/tmp/asdjsjad$ file data
+	data: POSIX tar archive (GNU)
+	bandit12@bandit:/tmp/asdjsjad$ mv data data.tar
+	bandit12@bandit:/tmp/asdjsjad$ tar -xvf data.tar
+	data5.bin
+	bandit12@bandit:/tmp/asdjsjad$ ls
+	data5.bin  data.tar  data.txt
+	bandit12@bandit:/tmp/asdjsjad$ file data5.bin
+	data5.bin: POSIX tar archive (GNU)
+	bandit12@bandit:/tmp/asdjsjad$ mv data5.bin data5.tar
+	bandit12@bandit:/tmp/asdjsjad$ tar -xvf data5.tar
+	data6.bin
+	bandit12@bandit:/tmp/asdjsjad$ file data6.bin
+	data6.bin: bzip2 compressed data, block size = 900k
+	bandit12@bandit:/tmp/asdjsjad$ mv data6.bin data6.bz2
+	bandit12@bandit:/tmp/asdjsjad$ bzip2 -d data6.bz2
+	bandit12@bandit:/tmp/asdjsjad$ ls
+	data5.tar  data6  data.tar  data.txt
+	bandit12@bandit:/tmp/asdjsjad$ file data6
+	data6: POSIX tar archive (GNU)
+	bandit12@bandit:/tmp/asdjsjad$ mv data6 data6.tar
+	bandit12@bandit:/tmp/asdjsjad$ tar -xvf data6.tar
+	data8.bin
+	bandit12@bandit:/tmp/asdjsjad$ file data8.bin
+	data8.bin: gzip compressed data, was "data9.bin", last modified: Thu Sep 19 07:08:15 2024, max 	compression, from Unix, original size modulo 2^32 	49
+	bandit12@bandit:/tmp/asdjsjad$ mv data8.bin data8.gz
+	bandit12@bandit:/tmp/asdjsjad$ gzip -d data8.gz
+	bandit12@bandit:/tmp/asdjsjad$ ls
+	data5.tar  data6.tar  data8  data.tar  data.txt
+	bandit12@bandit:/tmp/asdjsjad$ file data8
+	data8: ASCII text
+	bandit12@bandit:/tmp/asdjsjad$ cat data8
+	The password is FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
+
+bandit 14 - MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
+	bandit13@bandit:~$ ls
+	sshkey.private
+	bandit13@bandit:~$ ssh -i sshkey.private -p 2220 bandit14@localhost
+	bandit14@bandit:~$ cat /etc/bandit_pass/bandit14
+	MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
+
+bandit 15 - 8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
+	bandit14@bandit:~$ cat /etc/bandit_pass/bandit14
+	MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
+	bandit14@bandit:~$ netcat localhost 30000
+	MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
+	Correct!
+	8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
+
+bandit 16 - kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx
+	bandit15@bandit:~$ openssl s_client -connect localhost:30001
+	---
+	read R BLOCK
+	8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
+	Correct!
+	kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx
+
+bandit 17 - EReVavePLFHtFlFsjn3hyzMlvSuSAcRD
+	bandit16@bandit:~$ nmap -sV -T4 -p 31000-32000 localhost
+	bandit16@bandit:~$ openssl s_client -quiet -connect localhost:31790
+	kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx
+	
+	bandit16@bandit:~$ mkdir /tmp/random_sshkey
+	mkdir: cannot create directory ‘/tmp/random_sshkey’: File exists
+	bandit16@bandit:~$ cd /tmp/random_sshkey
+	bandit16@bandit:/tmp/random_sshkey$ touch private.key
+	bandit16@bandit:/tmp/random_sshkey$ ls
+	private.key
+	bandit16@bandit:/tmp/random_sshkey$ vim private.key
+	bandit16@bandit:/tmp/random_sshkey$ chmod 400 private.key
+	bandit16@bandit:/tmp/random_sshkey$ ll
+	total 32
+	drwxrwxr-x   2 bandit16 bandit16  4096 Apr 10 21:01 ./
+	drwxrwx-wt 552 root     root     20480 Apr 10 21:10 ../
+	-r--------   1 bandit16 bandit16  1675 Apr 10 21:10 private.key
+	bandit16@bandit:/tmp/random_sshkey$ ssh -i private.key bandit17@localhost -p2220
+	bandit17@bandit:~$ cat /etc/bandit_pass/bandit17
+	EReVavePLFHtFlFsjn3hyzMlvSuSAcRD
+	bandit17@bandit:~$
+
+bandit 18 - x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO
+	bandit17@bandit:~$ ls
+	passwords.new  passwords.old
+	bandit17@bandit:~$ diff passwords.old passwords.new
+	42c42
+	 C6XNBdYOkgt5ARXESMKWWOUwBeaIQZ0Y
+	---
+	> x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO
+	bandit17@bandit:~$ diff passwords.old passwords.new | grep '>'
+	> x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO
+	bandit17@bandit:~$
+
+bandit 19 - cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8
+	ssh bandit18@bandit.labs.overthewire.org -p 2220 -t "/bin/sh"
+	C:\Users\Dino>ssh bandit18@bandit.labs.overthewire.org -p 2220 -t "/bin/sh"
+                         _                     _ _ _
+                        | |__   __ _ _ __   __| (_) |_
+                        | '_ \ / _` | '_ \ / _` | | __|
+                        | |_) | (_| | | | | (_| | | |_
+                        |_.__/ \__,_|_| |_|\__,_|_|\__|
+
+
+                      This is an OverTheWire game server.
+            More information on http://www.overthewire.org/wargames
+
+	bandit18@bandit.labs.overthewire.org's password:
+	$ ls
+	readme
+	$ cat readme
+	cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8
+	$
+
+bandit 20 - 0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO
+
+C:\Users\Dino>ssh bandit19@bandit.labs.overthewire.org -p 2220 -t "/bin/sh"
+                         _                     _ _ _
+                        | |__   __ _ _ __   __| (_) |_
+                        | '_ \ / _` | '_ \ / _` | | __|
+                        | |_) | (_| | | | | (_| | | |_
+                        |_.__/ \__,_|_| |_|\__,_|_|\__|
+
+
+                      This is an OverTheWire game server.
+            More information on http://www.overthewire.org/wargames
+
+	bandit19@bandit.labs.overthewire.org's password:
+	$ ls
+	bandit20-do
+	$ cat bandit20-do
+	$ ./bandit20-do
+	Run a command as another user.
+  	Example: ./bandit20-do id
+	$ ./bandit20-do id
+	uid=11019(bandit19) gid=11019(bandit19) euid=11020(bandit20) groups=11019(bandit19)
+	$ ./bandit20-do cat /etc/bandit_pass/bandit20
+	0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
