@@ -164,69 +164,7 @@ bandit 12 - 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
 	bandit11@bandit:~$ cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
 	The password is 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
 
-bandit 13 - FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
-	
-	bandit12@bandit:~$ mkdir /tmp/test
-	mkdir: cannot create directory ‘/tmp/test’: File exists
-	bandit12@bandit:~$ mkdir /tmp/asdjsjad
-	bandit12@bandit:~$ cd /tmp/asdjsjad
-	bandit12@bandit:/tmp/asdjsjad$ ll
-	total 17012
-	drwxrwxr-x 2 bandit12 bandit12     4096 Apr  4 18:01 ./
-	drwxrwx-wt 1 root     root     17412096 Apr  4 18:21 ../
-	bandit12@bandit:/tmp/asdjsjad$ cd ~
-	bandit12@bandit:~$ cp data.txt /tmp/asdjsjad
-	bandit12@bandit:~$ cd /tmp/asdjsjad
-	bandit12@bandit:/tmp/asdjsjad$ xxd -r data.txt > data
-	bandit12@bandit:/tmp/asdjsjad$ ls
-	data  data.txt
-	bandit12@bandit:/tmp/asdjsjad$ file data
-	data: gzip compressed data, was "data2.bin", last modified: Thu Sep 19 07:08:15 2024, max 	compression, from Unix, original size modulo 2^32 574
-	bandit12@bandit:/tmp/asdjsjad$ mv data data.gz
-	bandit12@bandit:/tmp/asdjsjad$ gzip -d data.gz
-	bandit12@bandit:/tmp/asdjsjad$ ls
-	data  data.txt
-	bandit12@bandit:/tmp/asdjsjad$ file data
-	data: bzip2 compressed data, block size = 900k
-	bandit12@bandit:/tmp/asdjsjad$ mv data data.bz2
-	bandit12@bandit:/tmp/asdjsjad$ bzip2 -d data.bz2
-	bandit12@bandit:/tmp/asdjsjad$ file data
-	data: gzip compressed data, was "data4.bin", last modified: Thu Sep 19 07:08:15 2024, max 	compression, from Unix, original size modulo 2^32 	20480
-	bandit12@bandit:/tmp/asdjsjad$ mv data data.gz
-	bandit12@bandit:/tmp/asdjsjad$ gzip -d data.gz
-	bandit12@bandit:/tmp/asdjsjad$ file data
-	data: POSIX tar archive (GNU)
-	bandit12@bandit:/tmp/asdjsjad$ mv data data.tar
-	bandit12@bandit:/tmp/asdjsjad$ tar -xvf data.tar
-	data5.bin
-	bandit12@bandit:/tmp/asdjsjad$ ls
-	data5.bin  data.tar  data.txt
-	bandit12@bandit:/tmp/asdjsjad$ file data5.bin
-	data5.bin: POSIX tar archive (GNU)
-	bandit12@bandit:/tmp/asdjsjad$ mv data5.bin data5.tar
-	bandit12@bandit:/tmp/asdjsjad$ tar -xvf data5.tar
-	data6.bin
-	bandit12@bandit:/tmp/asdjsjad$ file data6.bin
-	data6.bin: bzip2 compressed data, block size = 900k
-	bandit12@bandit:/tmp/asdjsjad$ mv data6.bin data6.bz2
-	bandit12@bandit:/tmp/asdjsjad$ bzip2 -d data6.bz2
-	bandit12@bandit:/tmp/asdjsjad$ ls
-	data5.tar  data6  data.tar  data.txt
-	bandit12@bandit:/tmp/asdjsjad$ file data6
-	data6: POSIX tar archive (GNU)
-	bandit12@bandit:/tmp/asdjsjad$ mv data6 data6.tar
-	bandit12@bandit:/tmp/asdjsjad$ tar -xvf data6.tar
-	data8.bin
-	bandit12@bandit:/tmp/asdjsjad$ file data8.bin
-	data8.bin: gzip compressed data, was "data9.bin", last modified: Thu Sep 19 07:08:15 2024, max 	compression, from Unix, original size modulo 2^32 	49
-	bandit12@bandit:/tmp/asdjsjad$ mv data8.bin data8.gz
-	bandit12@bandit:/tmp/asdjsjad$ gzip -d data8.gz
-	bandit12@bandit:/tmp/asdjsjad$ ls
-	data5.tar  data6.tar  data8  data.tar  data.txt
-	bandit12@bandit:/tmp/asdjsjad$ file data8
-	data8: ASCII text
-	bandit12@bandit:/tmp/asdjsjad$ cat data8
-	The password is FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
+
 
 bandit 14 - MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
 	bandit13@bandit:~$ ls
