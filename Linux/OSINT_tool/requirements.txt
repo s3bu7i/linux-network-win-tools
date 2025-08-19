@@ -114,7 +114,7 @@ platformdirs==4.1.0
 ply==3.11
 prometheus_client==0.21.0
 prompt-toolkit==3.0.43
-protobuf==4.25.3
+protobuf==4.25.8
 psutil==5.9.8
 psycopg2==2.9.9
 pure_eval==0.2.3
