@@ -12,7 +12,13 @@ logging.basicConfig(filename='rce.log', level=logging.INFO,
 USERS = {'admin': 'password123'}
 
 # List of allowed commands (whitelisting)
-ALLOWED_COMMANDS = ['ls', 'pwd', 'whoami', 'uptime']
+# Map allowed command names to actual command lists (no arguments allowed)
+ALLOWED_COMMANDS = {
+    "ls": ["ls"],
+    "pwd": ["pwd"],
+    "whoami": ["whoami"],
+    "uptime": ["uptime"]
+}
 
 # Basic HTML for the input form (simple UI)
 html_page = """
@@ -59,8 +65,8 @@ def execute_command(command):
         return "Command not allowed", 400
 
     try:
-        # Execute the command securely without shell=True
-        output = subprocess.check_output([command], universal_newlines=True)
+        # Execute the command securely using the mapped command list (no user input passed untrusted)
+        output = subprocess.check_output(ALLOWED_COMMANDS[command], universal_newlines=True)
         # Log the successful execution
         logging.info(f"Executed command: {command}")
         return output, 200
