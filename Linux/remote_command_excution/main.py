@@ -101,5 +101,5 @@ def command_form():
 
 
 if __name__ == '__main__':
-    # Running the Flask app in debug mode
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    # Running the Flask app (debug mode disabled)
+    app.run(host='0.0.0.0', port=5000)
