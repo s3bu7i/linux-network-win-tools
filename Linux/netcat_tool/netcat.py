@@ -75,9 +75,9 @@ def chat_client(target_ip, port):
             print(f"{target_ip}: {response}")
 
 # Function to execute remote commands
-def remote_shell_server(port):
+def remote_shell_server(port, listen_ip="127.0.0.1"):
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-        s.bind(("", port))
+        s.bind((listen_ip, port))
         s.listen(1)
         conn, addr = s.accept()
         print(f"Remote shell connection from {addr}")
