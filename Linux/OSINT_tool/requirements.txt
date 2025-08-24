@@ -197,7 +197,7 @@ textblob==0.18.0.post0
 threadpoolctl==3.4.0
 tinycss2==1.3.0
 toml==0.10.1
-tornado==6.4.2
+tornado==6.5
 tqdm==4.66.2
 traitlets==5.14.3
 twisted-iocpsupport==1.0.4
