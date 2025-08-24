@@ -33,6 +33,10 @@ public class Server {
     }
 
     private static void receiveFile(String fileName) throws Exception{
+        // Validate fileName: no path separators or parent dir references allowed
+        if (fileName.contains("..") || fileName.contains("/") || fileName.contains("\\")) {
+            throw new IllegalArgumentException("Invalid filename");
+        }
         int bytes = 0;
         FileOutputStream fileOutputStream = new FileOutputStream(fileName);
 
