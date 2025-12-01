@@ -54,7 +54,7 @@ flatbuffers==24.3.25
 flet==0.23.2
 flet-core==0.23.2
 flet-runtime==0.23.2
-fonttools==4.51.0
+fonttools==4.61.0
 frozenlist==1.4.1
 gitdb==4.0.11
 greenlet==3.0.3
