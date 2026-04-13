@@ -109,7 +109,7 @@ parso==0.8.4
 pefile==2023.2.7
 phonenumbers==8.13.37
 pi==0.1.2
-pillow==12.1.1
+pillow==12.2.0
 platformdirs==4.1.0
 ply==3.11
 prometheus_client==0.21.0
