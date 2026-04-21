@@ -146,7 +146,7 @@ PyScreeze==0.1.30
 pysmi==0.3.4
 pysnmp==4.4.12
 python-dateutil==2.9.0.post0
-python-dotenv==1.0.1
+python-dotenv==1.2.2
 python-json-logger==2.0.7
 python-multipart==0.0.22
 python-nmap==0.7.1
