@@ -6,4 +6,4 @@ idna==3.7
 requests==2.33.0
 sqlparse==0.6.0
 typing-extensions==4.7.1
-urllib3==2.6.3
+urllib3==2.7.0
