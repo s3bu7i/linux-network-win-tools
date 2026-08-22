@@ -33,7 +33,7 @@ dirtyjson==1.0.8
 distlib==0.3.8
 distro==1.9.0
 dj-database-url==2.1.0
-Django==5.1.15
+Django==5.2.16
 django-allauth==65.13.0
 django-countries==7.5.1
 django-crispy-forms==2.1
