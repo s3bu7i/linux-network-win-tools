@@ -76,7 +76,7 @@ jsonpointer==3.0.0
 jupyter_client==8.6.3
 jupyter_core==5.7.2
 jupyterlab_pygments==0.3.0
-kafka-python==2.0.2
+kafka-python==2.3.2
 kiwisolver==1.4.5
 kombu==5.3.7
 markdown-it-py==3.0.0
