@@ -98,7 +98,7 @@ netaddr==0.8.0
 netifaces==0.11.0
 nltk==3.9.4
 numpy==1.26.4
-oauthlib==3.2.2
+oauthlib==4.0.0
 opencv-python==4.10.0.82
 orjson==3.10.6
 overrides==7.7.0
